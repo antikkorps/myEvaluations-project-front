@@ -76,6 +76,36 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               i18nProvider={i18nProvider}
               resources={[
                 {
+                  name: 'evaluations',
+                  list: '/evaluations',
+                  create: '/evaluations/create',
+                  edit: '/evaluations/edit/:id',
+                  show: '/evaluations/show/:id',
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: 'contrats',
+                  list: '/contrats',
+                  create: '/contrats/create',
+                  edit: '/contrats/edit/:id',
+                  show: '/contrats/show/:id',
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: 'Participants',
+                  list: '/participants',
+                  create: '/participants/create',
+                  edit: '/participants/edit/:id',
+                  show: '/participants/show/:id',
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
                   name: 'blog-posts',
                   list: '/blog-posts',
                   create: '/blog-posts/create',

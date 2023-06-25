@@ -1,13 +1,13 @@
-import { AuthBindings } from "@refinedev/core";
-import { AuthHelper } from "@refinedev/strapi-v4";
+import { AuthBindings } from '@refinedev/core';
+import { AuthHelper } from '@refinedev/strapi-v4';
 
-import axios from "axios";
-import nookies from "nookies";
+import axios from 'axios';
+import nookies from 'nookies';
 
-import { API_URL, TOKEN_KEY } from "./constants";
+import { API_URL, TOKEN_KEY } from './constants';
 
 export const axiosInstance = axios.create();
-const strapiAuthHelper = AuthHelper(API_URL + "/api");
+const strapiAuthHelper = AuthHelper(API_URL + '/api');
 
 axiosInstance.interceptors.request.use((request) => {
   const cookies = nookies.get();
@@ -25,7 +25,7 @@ export const authProvider: AuthBindings = {
     if (status === 200) {
       nookies.set(null, TOKEN_KEY, data.jwt, {
         maxAge: 30 * 24 * 60 * 60,
-        path: "/",
+        path: '/',
       });
 
       // set header axios instance
@@ -35,14 +35,14 @@ export const authProvider: AuthBindings = {
 
       return {
         success: true,
-        redirectTo: "/",
+        redirectTo: '/',
       };
     }
     return {
       success: false,
       error: {
-        message: "Login failed",
-        name: "Invalid email or password",
+        message: 'Login failed',
+        name: 'Invalid email or password',
       },
     };
   },
@@ -50,7 +50,7 @@ export const authProvider: AuthBindings = {
     nookies.destroy(null, TOKEN_KEY);
     return {
       success: true,
-      redirectTo: "/login",
+      redirectTo: '/login',
     };
   },
   check: async (ctx) => {
@@ -66,7 +66,7 @@ export const authProvider: AuthBindings = {
 
     return {
       authenticated: false,
-      redirectTo: "/login",
+      redirectTo: '/login',
     };
   },
   getPermissions: async () => null,

@@ -1,0 +1,163 @@
+{
+  "pages": {
+    "login": {
+      "title": "Se connecter à votre compte",
+      "signin": "Se connecter",
+      "signup": "S'inscrire",
+      "divider": "Ou",
+      "fields": {
+        "email": "Email",
+        "password": "Mot de passe"
+      },
+      "errors": {
+        "validEmail": "Adresse e-mail invalide"
+      },
+      "buttons": {
+        "submit": "Se connecter",
+        "forgotPassword": "Mot de passe oublié ?",
+        "noAccount": "Vous n'avez pas de compte ?",
+        "rememberMe": "Se souvenir de moi"
+      }
+    },
+    "forgotPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "Adresse e-mail invalide"
+      },
+      "buttons": {
+        "submit": "Envoyer le lien de réinitialisation du mot de passe"
+      }
+    },
+    "register": {
+      "title": "Créer un compte",
+      "fields": {
+        "email": "Email",
+        "password": "Mot de passe"
+      },
+      "errors": {
+        "validEmail": "Adresse e-mail invalide"
+      },
+      "buttons": {
+        "submit": "S'inscrire",
+        "haveAccount": "Vous avez déjà un compte ?"
+      }
+    },
+    "updatePassword": {
+      "title": "Mettre à jour le mot de passe",
+      "fields": {
+        "password": "Nouveau mot de passe",
+        "confirmPassword": "Confirmer le mot de passe"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Les mots de passe ne correspondent pas"
+      },
+      "buttons": {
+        "submit": "Mettre à jour le mot de passe"
+      }
+    },
+    "error": {
+      "info": "Sie haben vergessen, {{action}} component zu {{resource}} hinzufügen.",
+      "404": "La page que vous recherchez n'existe pas.",
+      "resource404": "Haben Sie die {{resource}} resource erstellt?",
+      "backHome": "Retour à l'accueil"
+    }
+  },
+  "actions": {
+    "list": "Liste",
+    "create": "Créer",
+    "edit": "Editer",
+    "show": "Afficher"
+  },
+  "buttons": {
+    "create": "Créer",
+    "save": "Sauver",
+    "logout": "Se déconnecter",
+    "delete": "Supprimer",
+    "edit": "Editer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "filter": "Filtrer",
+    "clear": "Effacer",
+    "refresh": "Rafraîchir",
+    "show": "Afficher",
+    "undo": "Annuler",
+    "import": "Importer",
+    "clone": "dupliquer",
+    "notAccessTitle": "Sie haben keine zugriffsberechtigung"
+  },
+  "warnWhenUnsavedChanges": "Nicht gespeicherte Änderungen werden nicht übernommen.",
+  "notifications": {
+    "success": "Erfolg",
+    "error": "Fehler (status code: {{statusCode}})",
+    "undoable": "Sie haben {{seconds}} Sekunden Zeit für Undo.",
+    "createSuccess": "{{resource}} erfolgreich erstellt.",
+    "createError": "Fehler beim Erstellen {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "{{resource}} erfolgreich gelöscht.",
+    "deleteError": "Fehler beim Löschen {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "{{resource}} erfolgreich bearbeitet.",
+    "editError": "Fehler beim Editer {{resource}} (status code: {{statusCode}})",
+    "importProgress": "{{processed}}/{{total}} importiert"
+  },
+  "loading": "Wird geladen",
+  "tags": {
+    "clone": "Cloner"
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "blog-posts": {
+    "blog-posts": "Blogbeiträge",
+    "fields": {
+      "id": "Id",
+      "title": "Titre",
+      "content": "Inhalt",
+      "status": "Status",
+      "createdAt": "Créer le",
+      "category": "Catégorie"
+    },
+    "titles": {
+      "create": "Créer",
+      "edit": "Editer",
+      "list": "Einträge",
+      "show": "Eintrag zeigen"
+    }
+  },
+  "categories": {
+    "categories": "Catégories",
+    "fields": {
+      "id": "Id",
+      "title": "Titre",
+      "createdAt": "Créer le"
+    },
+    "titles": {
+      "create": "Créer",
+      "edit": "Editer",
+      "list": "lister",
+      "show": "Détails"
+    }
+  },
+  "documentTitle": {
+    "default": "refine",
+    "suffix": " | refine",
+    "blog-posts": {
+      "list": "Blog-Posts | refine",
+      "show": "#{{id}} Show Blog-Post | refine",
+      "edit": "#{{id}} Edit Blog-Post | refine",
+      "create": "Create new Blog-Post | refine",
+      "clone": "#{{id}} Clones Blog-Post| refine"
+    },
+    "categories": {
+      "list": "Catégories | refine",
+      "show": "#{{id}} Montrer Catégories | refine",
+      "edit": "#{{id}} Editer Catégories | refine",
+      "create": "Créer nouvelle catégorie | refine",
+      "clone": "#{{id}} Cloner catégorie | refine"
+    }
+  },
+  "table": {
+    "actions": "Actions"
+  }
+}
