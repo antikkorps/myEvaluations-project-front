@@ -1,27 +1,27 @@
-import { GitHubBanner, Refine } from "@refinedev/core";
-import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
+import { Refine } from '@refinedev/core';
+import { RefineKbar, RefineKbarProvider } from '@refinedev/kbar';
 import {
   notificationProvider,
   RefineSnackbarProvider,
   ThemedLayoutV2,
   ThemedTitleV2,
-} from "@refinedev/mui";
+} from '@refinedev/mui';
 import routerProvider, {
   DocumentTitleHandler,
   UnsavedChangesNotifier,
-} from "@refinedev/nextjs-router";
-import type { NextPage } from "next";
-import { AppProps } from "next/app";
+} from '@refinedev/nextjs-router';
+import type { NextPage } from 'next';
+import { AppProps } from 'next/app';
 
-import { Header } from "@components/header";
-import { ColorModeContextProvider } from "@contexts";
-import CssBaseline from "@mui/material/CssBaseline";
-import GlobalStyles from "@mui/material/GlobalStyles";
-import { DataProvider } from "@refinedev/strapi-v4";
-import { appWithTranslation, useTranslation } from "next-i18next";
-import { authProvider, axiosInstance } from "src/authProvider";
-import { AppIcon } from "src/components/app-icon";
-import { API_URL } from "src/constants";
+import { Header } from '@components/header';
+import { ColorModeContextProvider } from '@contexts';
+import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import { DataProvider } from '@refinedev/strapi-v4';
+import { appWithTranslation, useTranslation } from 'next-i18next';
+import { authProvider, axiosInstance } from 'src/authProvider';
+import { AppIcon } from 'src/components/app-icon';
+import { API_URL } from 'src/constants';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   noLayout?: boolean;
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
         Title={({ collapsed }) => (
           <ThemedTitleV2
             collapsed={collapsed}
-            text="refine Project"
+            text='refine Project'
             icon={<AppIcon />}
           />
         )}
@@ -63,11 +63,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
   return (
     <>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <CssBaseline />
-          <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
+          <GlobalStyles styles={{ html: { WebkitFontSmoothing: 'auto' } }} />
           <RefineSnackbarProvider>
             <Refine
               routerProvider={routerProvider}
@@ -77,21 +76,21 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               i18nProvider={i18nProvider}
               resources={[
                 {
-                  name: "blog-posts",
-                  list: "/blog-posts",
-                  create: "/blog-posts/create",
-                  edit: "/blog-posts/edit/:id",
-                  show: "/blog-posts/show/:id",
+                  name: 'blog-posts',
+                  list: '/blog-posts',
+                  create: '/blog-posts/create',
+                  edit: '/blog-posts/edit/:id',
+                  show: '/blog-posts/show/:id',
                   meta: {
                     canDelete: true,
                   },
                 },
                 {
-                  name: "categories",
-                  list: "/categories",
-                  create: "/categories/create",
-                  edit: "/categories/edit/:id",
-                  show: "/categories/show/:id",
+                  name: 'categories',
+                  list: '/categories',
+                  create: '/categories/create',
+                  edit: '/categories/edit/:id',
+                  show: '/categories/show/:id',
                   meta: {
                     canDelete: true,
                   },
