@@ -1,13 +1,13 @@
-import { ThemeProvider } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { RefineThemes } from "@refinedev/mui";
-import { parseCookies, setCookie } from "nookies";
+import { ThemeProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { RefineThemes } from '@refinedev/mui';
+import { parseCookies, setCookie } from 'nookies';
 import React, {
   createContext,
   PropsWithChildren,
   useEffect,
   useState,
-} from "react";
+} from 'react';
 
 type ColorModeContextType = {
   mode: string;
@@ -22,7 +22,7 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState('light');
 
   useEffect(() => {
     setIsMounted(true);
@@ -32,15 +32,15 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
 
   useEffect(() => {
     if (isMounted) {
-      setMode(parseCookies()["theme"] || (systemTheme ? "dark" : "light"));
+      setMode(parseCookies()['theme'] || (systemTheme ? 'dark' : 'light'));
     }
   }, [isMounted, systemTheme]);
 
   const toggleTheme = () => {
-    const nextTheme = mode === "light" ? "dark" : "light";
+    const nextTheme = mode === 'light' ? 'dark' : 'light';
 
     setMode(nextTheme);
-    setCookie(null, "theme", nextTheme);
+    setCookie(null, 'theme', nextTheme);
   };
 
   return (
@@ -52,7 +52,9 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
     >
       <ThemeProvider
         // you can change the theme colors here. example: mode === "light" ? RefineThemes.Magenta : RefineThemes.MagentaDark
-        theme={mode === "light" ? RefineThemes.Blue : RefineThemes.BlueDark}
+        theme={
+          mode === 'light' ? RefineThemes.Magenta : RefineThemes.MagentaDark
+        }
       >
         {children}
       </ThemeProvider>
