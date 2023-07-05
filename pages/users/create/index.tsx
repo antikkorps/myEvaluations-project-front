@@ -1,12 +1,11 @@
-import { MuiListInferencer } from '@refinedev/inferencer/mui';
+import { MuiCreateInferencer } from '@refinedev/inferencer/mui';
 import { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { authProvider } from 'src/authProvider';
 
-
-export default function EvaluationList() {
+export default function UserCreate() {
   return (
-    <MuiListInferencer
+    <MuiCreateInferencer
       fieldTransformer={(field) => {
         if (['locale', 'updatedAt', 'publishedAt'].includes(field.key)) {
           return false;
@@ -31,7 +30,7 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
         ...translateProps,
       },
       redirect: {
-        destination: `${redirectTo}?to=${encodeURIComponent('/evaluations')}`,
+        destination: `${redirectTo}?to=${encodeURIComponent('/users')}`,
         permanent: false,
       },
     };

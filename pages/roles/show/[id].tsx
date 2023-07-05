@@ -1,11 +1,11 @@
-import { MuiListInferencer } from '@refinedev/inferencer/mui';
+import { MuiShowInferencer } from '@refinedev/inferencer/mui';
 import { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { authProvider } from 'src/authProvider';
 
-export default function ParticipantList() {
+export default function RoleShow() {
   return (
-    <MuiListInferencer
+    <MuiShowInferencer
       fieldTransformer={(field) => {
         if (['locale', 'updatedAt', 'publishedAt'].includes(field.key)) {
           return false;
@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
         ...translateProps,
       },
       redirect: {
-        destination: `${redirectTo}?to=${encodeURIComponent('/participants')}`,
+        destination: `${redirectTo}?to=${encodeURIComponent('/roles')}`,
         permanent: false,
       },
     };

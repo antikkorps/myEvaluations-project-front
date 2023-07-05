@@ -17,11 +17,16 @@ import { Header } from '@components/header';
 import { ColorModeContextProvider } from '@contexts';
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
-import { DataProvider } from '@refinedev/strapi-v4';
+// import { DataProvider } from '@refinedev/strapi-v4';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { authProvider, axiosInstance } from 'src/authProvider';
 import { AppIcon } from 'src/components/app-icon';
 import { API_URL } from 'src/constants';
+
+
+import dataProvider from "@refinedev/simple-rest";
+
+
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   noLayout?: boolean;
@@ -31,7 +36,14 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+
+
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
+
+
+  const api_url = `http://localhost:8080/api/v1`;
+
   const renderComponent = () => {
     if (Component.noLayout) {
       return <Component {...pageProps} />;
@@ -71,7 +83,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
             <Refine
               routerProvider={routerProvider}
               authProvider={authProvider}
-              dataProvider={DataProvider(API_URL + `/api`, axiosInstance)}
+              dataProvider={dataProvider(api_url, axiosInstance)}
               notificationProvider={notificationProvider}
               i18nProvider={i18nProvider}
               resources={[
@@ -96,11 +108,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                   },
                 },
                 {
-                  name: 'Participants',
-                  list: '/participants',
-                  create: '/participants/create',
-                  edit: '/participants/edit/:id',
-                  show: '/participants/show/:id',
+                  name: 'users',
+                  list: '/users',
+                  create: '/users/create',
+                  edit: '/users/edit/:id',
+                  show: '/users/show/:id',
                   meta: {
                     canDelete: true,
                   },
@@ -121,6 +133,16 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                   create: '/categories/create',
                   edit: '/categories/edit/:id',
                   show: '/categories/show/:id',
+                  meta: {
+                    canDelete: true,
+                  },
+                },
+                {
+                  name: 'roles',
+                  list: '/roles',
+                  create: '/roles/create',
+                  edit: '/roles/edit/:id',
+                  show: '/roles/show/:id',
                   meta: {
                     canDelete: true,
                   },
