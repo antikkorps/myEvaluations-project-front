@@ -15,14 +15,10 @@ export default function UserList() {
     <MuiListInferencer
     resource="users"
     action='list'
-
-
       fieldTransformer={(field) => {
         if (['locale', 'updatedAt', 'publishedAt'].includes(field.key)) {
           return false;
         }
-        
-
         return field;
       }}
     />
